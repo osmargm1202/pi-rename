@@ -53,8 +53,8 @@ export default function renameExtension(pi: ExtensionAPI) {
 		currentName = "";
 	});
 
-	pi.registerCommand("orgm-rename", {
-		description: "Set session label shown in editor footer: /orgm-rename <label> | clear",
+	pi.registerCommand("rename", {
+		description: "Set session label shown in editor footer: /rename <label> | clear",
 		getArgumentCompletions: (prefix) => {
 			const options = [
 				{ value: "clear", label: "clear — remove current session name" },
@@ -70,7 +70,7 @@ export default function renameExtension(pi: ExtensionAPI) {
 
 			if (!trimmed) {
 				ctx.ui.notify(
-					currentName ? `Session name: ${currentName}` : "No session name. Use /orgm-rename <name>.",
+					currentName ? `Session name: ${currentName}` : "No session name. Use /rename <name>.",
 					"info",
 				);
 				return;
